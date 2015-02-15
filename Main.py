@@ -1,5 +1,6 @@
 # coding=utf-8
 
+from datetime import date
 import urllib
 import re
 import time
@@ -13,7 +14,8 @@ def getImgUrl(html):
     return url[0]
 
 def downloadImg(url,path):
-    xpath=path+'\\bing.jpg'
+    today = date.today().isoformat()
+    xpath=path+'\\'+today+'.jpg'
     print xpath
     urllib.urlretrieve(url,xpath)
 
@@ -21,5 +23,5 @@ if __name__=='__main__':
     start=time.time()
     html=getHtml('http://cn.bing.com/')
     url=getImgUrl(html)
-    downloadImg(url,'')
+    downloadImg(url,'wallpapers')
     end=time.time()

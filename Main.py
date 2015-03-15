@@ -15,7 +15,7 @@ def getImgUrl(html):
 
 def downloadImg(url,path):
     today = date.today().isoformat()
-    xpath=path+'\\'+today+'.jpg'
+    xpath=path+'/'+today+'.jpg'
     print xpath
     urllib.urlretrieve(url,xpath)
 
